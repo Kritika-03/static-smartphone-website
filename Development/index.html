@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Online Mobile Store">
+		<meta name="keywords" content="Phone,Mobile,Smartphone,Store,PUXI">
+		<meta name="author" content="Kritika Baidawar,Islington">
+		<!-- meta tags -->
+
+		<title>PUXI | Home</title>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!-- external link for icons -->
+
+		<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+		<script src="js/script.js"></script>
+		<style type="text/css">
+			/*wrapper for the content of the page*/
+			.content-box-wrapper{
+				margin-top: 120px;
+				width: 100%;
+				height:1700px;
+			}
+			/*defining dimension for each section of different content*/
+			.content-box{
+				width: 80%;
+				height: 500px;
+				margin: 40px auto 0 auto;
+			}
+			/*slider display is none because we will use javascript to make it visible*/
+			.slider-box{
+				position: relative;
+				display: none;
+				overflow: hidden;
+				width: 100%;
+				height: 100%;
+				cursor: pointer;
+			}
+			/*zoom effect on the image when u hover over it*/
+			.image-zoom{
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				transition: .5s;
+			}
+			.image-zoom:hover{
+				height: 102%;
+				width: 102%;
+			}
+			/*defining  container holding radio buttons*/
+			.slider-button{
+				position: absolute;
+				left: 25%;
+				bottom: 5%;
+				height: 5%;
+				width: 50%;
+				padding: 6px;
+				text-align: center;
+			}
+			/*defining text box in each slide. It overlays with the image*/
+			.slider-text-box{
+				position: absolute;
+				height: 50%;
+				width: 50%;
+				top: 25%;
+				left: 25%;
+				padding: 20px;
+				background: rgba(200, 200, 200, 0.2);
+				text-align: center;
+			}
+			.slider-text-box h1{
+				font-size: 50px;
+				line-height: 60px;
+			}
+			.slider-text-box p{
+				font-size: 25px;
+				line-height: 50px;
+			}
+			.detail-btn{
+				color: darkred;
+				border: 1px solid darkred;
+				display: inline-block;
+				padding: 10px 5%;
+				font-size: 20px;
+				transition: 0.5s;
+			}
+			.detail-btn:hover{
+				background: darkred;
+				color: white;
+			}
+			/*diving a content-box into 2 halfs*/
+			.content-new-box,
+			.content-featured-box{
+				width: 50%;
+				height: 100%;
+				float: left;
+			}
+			/*defining an empty div to make the containers unever*/
+			.empty{
+				width: 100%;
+				height: 25%;
+			}
+			/*defining the container that will hold the content*/
+			.featured,
+			.new-arrivals{
+				width: 90%;
+				height: 75%;
+				position: relative;
+				margin: 0 5%;
+				border: 1px solid darkred;
+			}
+			.card-image{
+				height: 100%;
+				width: 100%;
+				object-fit: scale-down;
+			}
+			/*you cant see the text untill u hover over it*/
+			.card-text{
+				position: absolute;
+				top: 0;
+				left: 0;
+				opacity: 0%;
+				width: 100%;
+				height: 100%;
+				transition: 1s;
+				background-size: cover;
+				padding: 20px;
+			}
+			.card-text:hover{
+				opacity: 100%;
+				background: white;
+			}
+			.card-text h1,h2{
+				text-align: center;
+				font-family: Century Gothic;
+				font-weight: bold;
+				font-size: 50px;
+			}
+			.card-text p{
+				text-align: center;
+				font-family: Century Gothic;
+				font-weight: bold;
+				font-size: 25px;
+				line-height: 50px;
+			}
+			.brand-heading h1{
+				height: 20%;
+				width: 100%;
+				padding: 20px;
+				text-align: center;
+				font-size: 30px;
+			}
+			/*arranging the brand link images in tables*/
+			table{
+				width: 100%;
+				height: 75%;
+				margin-top: 20px;
+			}
+			tr{
+				height: 50%;
+			}
+			td{
+				width: 20%;
+				height: 90%;
+				padding: 20px;
+			}
+			td img{
+				width: 100%;
+				height: 100%;
+
+			}
+		</style>
+	</head>
+	<body>
+		<!-- whole content wrapper -->
+		<div class="wrapper">
+			<!-- navigation bar -->
+			<header class="header-box">
+				<div class="upper-nav-box">
+					<div class="logo">
+						<a href="index.html"><img src="images/logo.png"></a>
+					</div>
+					<div class="upper-nav-text">
+						<!-- these links are not developed yet so the alert we go off if clicked -->
+						<a href="#" onclick="inactiveAlert()">Login</a>
+						<a href="#" onclick="inactiveAlert()">Sign up</a>
+					</div>
+				</div>
+				<div class="lower-nav-box">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="pages/products.html">Products</a></li>
+						<li><a href="pages/research.html">Research</a></li>
+						<li><a href="pages/blog.html">Blog</a></li>
+						<li><a href="pages/contact.html">Contact Us</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- end of navigation -->
+			<!-- start of page content -->
+			<main class="content-box-wrapper">
+				<div class="content-box"  style="width: 100%;">
+					<!-- one image needs to be shows when opening the page -->
+					<!-- all four sliders are defined similarly -->
+					<div class="slider-box" style="display: block;" id="slider1"> 
+						<img class="image-zoom" src="images/slider1.jpg">
+						<div class="slider-text-box">
+								<h1>WELCOME TO PUXI</h1>
+								<p>Your new phone is just a few clicks away</p>
+								<a href="pages/products.html" class="detail-btn">Details</a>
+						</div>
+					</div>
+					<div class="slider-box" id="slider2"> 
+						<img class="image-zoom" src="images/slider22.jpg">
+						<div class="slider-text-box">
+								<h1>Apple iPhone 13 Pro</h1>
+								<p> Upgrade your pictures with the sharper and more detailed photos in any light</p>
+								<a href="pages/products.html" class="detail-btn">Details</a>
+						</div>
+					</div>
+					<div class="slider-box" id="slider3">
+						<img class="image-zoom" src="images/slider3.jpg"> 
+						<div class="slider-text-box">
+								<h1>Nokia 6.1</h1>
+								<p>Strong design and all the power you need</p>
+								<a href="pages/products.html" class="detail-btn">Details</a>
+						</div>
+					</div>
+					<div class="slider-box" id="slider4"> 
+						<img class="image-zoom" src="images/slider4.jpg">
+						<div class="slider-text-box">
+								<h1>Moto G Power</h1>
+								<p>A phone to caputure creativity</p>
+								<a href="pages/products.html" class="detail-btn">Details</a>
+						</div>
+					</div>
+					<!-- container with the radio buttons  -->
+					<!-- when clicked it will trigger the slider function -->
+					<div class="slider-button">
+						<input type="radio" name="sliderbtn" id="radio1" onclick="slider()" checked>
+						<input type="radio" name="sliderbtn" id="radio2" onclick="slider()">
+						<input type="radio" name="sliderbtn" id="radio3" onclick="slider()">
+						<input type="radio" name="sliderbtn" id="radio4" onclick="slider()">
+					</div>
+				</div>
+				<!-- content 2  -->
+				<div class="content-box">
+					<!-- divided into two containers -->
+					<div class="content-new-box">
+						<!-- divided into content and empty container -->
+						<div class="empty"></div>
+						<div class="new-arrivals">
+							<a href="pages/products.html">
+								<img class="card-image" src="images/display2.webp">
+								<!-- will be visible only when you hover -->
+								<div class="card-text"> 
+									<h1>Capture The Moment With</h1>
+									<h2>Galaxy A73 5G</h2><br>
+									<p> 8 GB RAM</p>
+									<p> 128/256GB Storage</p>
+									<p> Multi-Lens</p>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="content-featured-box">
+						<!-- divided into content and empty container -->
+						<div class="featured">
+							<a href="pages/products.html">
+								<img class="card-image" src="images/display1.webp">
+								<div class="card-text">
+									<h1>Time Upgrade To</h1>
+									<h2>Galaxy M33 5G</h2><br>
+									<p> 5nm Octa-core processor</p>
+									<p> 6000mAh Battery</p>
+									<p> 50MP Camera</p>
+								</div>
+							</a>
+						</div>
+						<div class="empty"></div>
+					</div>
+				</div>
+				<div class="content-box">
+						<div class="brand-heading">
+							<h1>BRANDS</h1><hr style="width: 50%;margin: auto; border: 1px solid dimgray;">
+						</div>
+						<div class="brand-content">
+							<!-- arranging brands image links in tables -->
+							<table>
+								<tr>
+									<td><a href="https://www.apple.com" target="_blank"><img src="images/apple.jpg"></a></td>
+									<td><a href="https://www.vivo.com" target="_blank"><img src="images/vivo.jpg"></a></td>
+									<td><a href="https://www.huawei.com" target="_blank"><img src="images/huawei.jpg"></a></td>
+									<td><a href="https://www.xiaomi.com" target="_blank"><img src="images/xiaomi.png"></a></td>
+									<td><a href="https://www.nokia.com" target="_blank"><img src="images/nokia.png"></a></td>
+								</tr>
+								<tr>
+									<td><a href="https://www.samsung.com" target="_blank"><img src="images/samsung.png"></a></td>
+									<td><a href="https://www.oneplus.com" target="_blank"><img src="images/oneplus.jpg"></a></td>
+									<td><a href="https://www.android.com" target="_blank"><img src="images/android.jpg"></a></td>
+									<td><a href="https://www.blackberry.com" target="_blank"><img src="images/blackberry.png"></a></td>
+									<td><a href="https://www.sony.com" target="_blank"><img src="images/sony.png"></a></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+			</main>
+			<!-- page content ends -->
+			<!-- footer bar -->
+			<footer class="footer-box">
+				<div class="footer-link-bar">
+					<div class="footer-col">
+						<h1>About Us</h1><br>
+						<p>PUXI is an online mobile shopping brand which has been operating since 2022.</p>
+						<p>Our goal is to provide authentic products to our customers easily online.</p>
+					</div>
+					<div class="footer-col">
+						<h1>Explore</h1><br>
+						<ul class="explore-list">
+							<li><a href="index.html">PUXI</a></li>
+							<li><a href="pages/products.html">Products</a></li>
+							<li><a href="pages/blog.html">Blog<title></title></a></li>
+							<li><a href="pages/research.html">Reserach</a></li>
+							<li><a href="pages/contact.html">Contact Us</a></li>
+						</ul>
+					</div>
+					<div class="footer-col">
+						<h1>Let's Connect</h1><br>
+						<div class="links">
+						<p>
+							<a href="https://www.gmail.com/" target="_blank">
+								<span class="fa fa-envelope">&nbsp;</span>puxi@gmail.com
+							</a>
+						</p>
+						<p>
+							<a>
+								<span class="fa fa-phone">&nbsp;</span>977-9856738282
+							</a>
+						</p>
+						<p>
+							<a href="https://www.google.com/maps/place/Islington+College/@27.7085218,85.3238296,17z/data=!3m1!4b1!4m5!3m4!1s0x39eb1908434cb3c5:0x1fdf1a6d41d2512d!8m2!3d27.7085171!4d85.3260183" target="_blank">
+								<span class="fa fa-map-marker"></span>&nbsp;Islington College
+							</a>	
+						</p>
+						</div>
+						<div class="socials">
+						<p>
+							<a href="https://www.twitter.com/" target="_blank">
+								<span class="fa fa-twitter"></span>
+							</a>
+							<a href="https://www.instagram.com/" target="_blank">
+								<span class="fa fa-instagram"></span>
+							</a>
+							<a href="https://www.facebook.com/" target="_blank">
+								<span class="fa fa-facebook"></span>
+							</a>
+						</p>
+					</div>
+					</div>
+				</div>
+				<div class="footer-copy-bar">
+					<p>Copyright &copy; 2022 | All Rights Reserved</p>
+			</footer>
+		</div>
+		<script type="text/javascript">
+			// taking id of slider and radio buttons
+			var slider1=document.getElementById('slider1');
+			var slider2=document.getElementById('slider2');
+			var slider3=document.getElementById('slider3');
+			var slider4=document.getElementById('slider4');
+			var radio1=document.getElementById('radio1');
+			var radio2=document.getElementById('radio2');
+			var radio3=document.getElementById('radio3');
+			var radio4=document.getElementById('radio4');
+			var x=0;
+			// arranging them in array
+			var sliders=[slider1,slider2,slider3,slider4];
+			var radios=[radio1,radio2,radio3,radio4];
+			// the slider will check which button is clecked and display corresponding slider 
+			// and will not display other sliders
+			function slider(){
+				for(var i=0;i<radios.length;i++)
+				{
+					if (radios[i].checked)
+					{
+						sliders[i].style.display="block";
+					}
+					else
+					{
+						sliders[i].style.display="none";
+					}
+				}
+			}
+			//similar logic but with a counter for autoslider
+			function autoslider(){
+				if (x<radios.length)
+				{
+					x=x+1;
+				}
+				else
+				{
+					x=1;
+				}
+				radios[x-1].checked=true;
+				
+				for(var i=0;i<radios.length;i++)
+				{
+					if (radios[i].checked)
+					{
+						sliders[i].style.display="block";
+					}
+					else
+					{
+						sliders[i].style.display="none";
+					}
+				}
+			}
+			setInterval(autoslider,6000);
+		</script>
+	</body>
+</html>

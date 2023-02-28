@@ -1,0 +1,178 @@
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	font-family: Century Gothic, sans-serif;
+}
+/*It applies to all the elements of all the pages externally linked*/
+/*whole content wrapper of a page*/
+.wrapper
+{
+	width: 100%;
+	height: auto;
+}
+/*fixing the navigation bar to the top of the page*/
+.header-box
+{
+	position: fixed;
+	top:0;
+	z-index: 1;
+	width: 100%;
+	margin: 0 auto;
+	height: 120px;
+	background: rgba(255, 255, 255, 0.9);
+	padding-top: 10px;
+	overflow: hidden;
+}
+.upper-nav-box,
+.lower-nav-box
+{
+	width: 100%;
+	height: 50%;
+}
+.logo
+{
+	float: left;
+	width: 30%;
+	height: 100%;
+}
+.logo img
+{
+	width: 100%;
+	height: 100%;
+	object-fit: scale-down;
+}
+.upper-nav-text
+{
+	float: right;
+	width: 70%;
+	height: 100%;
+}
+.lower-nav-box ul
+{
+	text-align: center;
+	list-style: none;
+}
+.lower-nav-box li
+{
+	display: inline-block;
+	margin: 0;
+}
+.upper-nav-text a,
+.lower-nav-box a
+{
+	padding: 20px;
+	float: right;
+	font: 17px;
+	color: #333333;
+	transition: .5s;
+}
+/*assigning hover effect on the links in navigation bar*/
+.upper-nav-text a:hover
+{
+	text-decoration-line: underline;
+}
+.lower-nav-box a:hover
+{
+	color: white;
+	background: black;
+}
+/*wrapper container of footer*/
+.footer-box
+{
+	width: 100%;
+	height: 250px;
+	color: black;
+	border-top: 1px solid #ccc;
+	background: white;
+}
+/*container for the columns in footer*/
+.footer-link-bar
+{
+	margin: 0 auto;
+	width: 80%;
+	height: 85%;
+	display: flex;
+}
+/*each column dimension in the footer*/
+.footer-col
+{
+	flex: 33.3%;
+	height: 100%;
+	padding: 10px;
+	line-height: 20px;
+}
+/*links insode the last column of footer*/
+.links
+{
+	float: left; 
+	width: 50%;
+	height: 90%;
+}
+.socials{
+	text-align: center;
+	float: right; 
+	width: 50%;
+	height: 90%;
+}
+/*styling elements in each column*/
+.footer-col h1
+{
+	padding-top: 10px;
+	text-align: center;
+	font-size: 25px;
+}
+.footer-col p
+{
+	text-align: justify-all;
+	padding: 5px 10px;
+	font-size: 14px;
+}
+.footer-col a
+{	
+	font-size:14px;
+	color: black;
+	transition: .5s;
+}
+/*hover effect on the links in the footer columns*/
+.footer-col a:hover
+{
+	color: #333;
+	font-weight: bolder;
+	font-size: 16px;
+}
+/*hovering effects for icons */
+.fa:hover
+{
+	color: blue;
+}
+
+.explore-list
+{
+	list-style: none;
+	text-align: center;
+}
+.fa
+{
+	font-size: 15px;
+}
+.fa-facebook,
+.fa-twitter,
+.fa-instagram
+{
+	display:block;
+	font-size: 20px;
+	padding: 3px ;
+}
+/*copyright bar at the bottom*/
+.footer-copy-bar
+{
+	background: #ddd;
+	width: 100%;
+	height: 15%;
+	text-align: center;
+	padding: 10px;
+	font-size: 15px;
+}

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Online Mobile Store">
+		<meta name="keywords" content="Phone,Mobile,Smartphone,Store,PUXI">
+		<meta name="author" content="Kritika Baidawar,Islington">
+
+		<title>PUXI | Research</title>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+		<script src="../js/script.js"></script>
+		<!-- external css and javascript links -->
+		<style type="text/css">
+			/*page content wrapper */
+			.content-box-wrapper{
+				width: 90%;
+				height: 4000px;
+				margin: 150px auto 30px auto;
+			}
+			/*defining and keeping the side navigation bar fixed*/
+			.research-button-box{
+				width: 10%;
+				height: 650px;
+				left: 4%;
+				top: 150px;
+				position: fixed;
+			}
+			/*styling the anchor tag*/
+			.research-button-box a{
+				display: block;
+				text-align: center;
+				font-size: 25px;
+				width: 100%;
+				padding: 25% 0;
+				background: grey;
+				color: white;
+			}
+			.research-button-box a:hover{
+				cursor: pointer;
+				background: darkred;
+			}
+			/*defining dimention fro reach research container*/
+			.research-content-box{
+				background:#ddd;
+				width: 90%;
+				height: 750px;
+				float: right;
+				padding: 20px;
+				margin-bottom:30px ;
+				line-height: 30px;
+			}
+			/*styling the contents inside the research container*/
+			.research-content-box h1{
+				font-size: 30px;
+			}
+			table{
+				width: 90%;
+				margin: auto;
+				height: 40%;
+				text-align: center;
+			}
+			th, h1,h2{
+				font-size: 20px;
+				height: 40px;
+			}
+			td{
+				width: 40%;
+				padding: 2%;
+				height: 100%;
+			}
+			td img{
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- whole content wrapper -->
+		<div class="wrapper">
+			<!-- navigaton bar -->
+			<header class="header-box">
+				<div class="upper-nav-box">
+					<div class="logo">
+						<a href="../index.html"><img src="../images/logo.png"></a>
+					</div>
+					<div class="upper-nav-text">
+						<a href="#" onclick="inactiveAlert()">Login</a>
+						<a href="#" onclick="inactiveAlert()">Sign up</a>
+					</div>
+				</div>
+				<div class="lower-nav-box">
+					<ul>
+						<li><a href="../index.html">Home</a></li>
+						<li><a href="products.html">Products</a></li>
+						<li><a href="research.html">Research</a></li>
+						<li><a href="blog.html">Blog</a></li>
+						<li><a href="contact.html">Contact Us</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- end of navigation bar -->
+			<!-- start of page content -->
+			<main class="content-box-wrapper">
+				<!-- side navigation bar to sroll to different research -->
+				<div class="research-button-box">
+					<a href="#research1">1</a>
+					<a href="#research2">2</a>
+					<a href="#research3">3</a>
+					<a href="#research4">4</a>
+					<a href="#research5">5</a>
+				</div>
+				<!-- end of side nav -->
+				<!-- beginning of  reserach content  -->
+				<div id="research1" class="research-content-box">
+					<h1 style="text-align: center;">Huawei</h1><br>
+					<br>
+					<p> The minimalistic look of the website seemed appropriate since its a website promoting devices. Therefore I wnated to implement a similar simple look in my website.</p>
+					<table>
+						<tr>
+							<th>Reference</th>
+							<th>Implementation</th>
+						</tr>
+						<tr>
+							<td><a href="https://www.huawei.com/" target="_blank"><img src="../images/research1.png"></a></td>
+							<td><a href="../index.html"><img src="../images/research11.png"></a></td>
+						</tr>
+					</table>
+					<h2>Similarities</h2>
+					<p> The text over the image-slider is similar in both the websites, and also a hyperlink button. The design aesthetics are similar too.</p><br>
+
+					<h2>Differences</h2>
+					<p>The references has side buttons on both sides of the image whereas this website only has radio buttons. The animation on the button for the automatic slider in the reference was unique.</p>
+				</div>
+				<!-- end of first research content -->
+				<div id="research2" class="research-content-box">
+					<h1 style="text-align: center;">MobileShop</h1><br>
+					<p>This webpage looked very crowded at first glance. However the options drop-down when hovering on the products were neat and separated the selected products from the rest. </p>
+					<table>
+						<tr>
+							<th>Reference</th>
+							<th>Implementation</th>
+						</tr>
+						<tr>
+							<td><a href="https://www.mobileshop.eu/android-os/" target="_blank"><img src="../images/research2.png"></a></td>
+							<td><a href="products.html" target="_blank"><img src="../images/research22.png"></a></td>
+						</tr>
+					</table>
+					<h2>Similarities</h2>
+					<p>This website implemented a similar hover effect when hovering on the name of the product.</p><br>
+					<h2>Differences</h2>
+					<p>The reference changes the dimension of the division when it is hovered on but this website overlays a division on top of another.</p>
+				</div>
+				<div id="research3" class="research-content-box">
+					<h1 style="text-align: center;">Nokia</h1><br>
+					<p>This webpage placed its content in different ratios. There were more videos with text above it. The hover effect on the product display is unique with the back part of the device sliding out.</p>
+					<table>
+						<tr>
+							<th>Reference</th>
+							<th>Implementation</th>
+						</tr>
+						<tr>
+							<td><a href="https://www.nokia.com/phones/en_int?utm_source=nokia.com&utm_medium=homepage&utm_content=header" target="_blank"><img src="../images/research3.png"></a></td>
+							<td><a href="../index.html" target="_blank"><img src="../images/research33.png"></a></td>
+						</tr>
+					</table>
+					<h2>Similarities</h2>
+					<p>The placement of the content in the webpage in the reference is implemented in this webpage.</p><br>
+					<h2>Differeneces</h2>
+					<p>In this webpage, the text appears if you hover on the box instead of being written on the side like in the reference. The box is used as a link to another page in this webpage whereas in the reference there is a button for the link.</p>
+				</div>
+				<div id="research4" class="research-content-box">
+					<h1 style="text-align: center;">Dealayo</h1><br>
+					<p> The reference has a lot of flitering options for a more efficient product search.</p>
+					<table>
+						<tr>
+							<th>Reference</th>
+							<th>Implementation</th>
+						</tr>
+						<tr>
+							<td><a href="https://www.dealayo.com/mobile.html" target="_blank"><img src="../images/research4.png"></a></td>
+							<td><a href="research.html" target="_blank"><img src="../images/research44.png"></a></td>
+						</tr>
+					</table>
+					<h2>Similarities</h2>
+					<p>This webpage implements the side navigation bar from the reference. The sidebars are used to navigate around the webpage.</p><br>
+					<h2>Differences</h2>
+					<p>There are no filtering options in this website. The navigation bars are using to navigation around the website. The top navigation bar navigations the pages while the side navigation bar navigations in the webpage.</p>
+				</div>
+				<div id="research5" class="research-content-box">
+					<h1 style="text-align: center;">Seth's Blog</h1><br>
+					<p> The reference seems like a personal blog website. The side navigation bar with the blogs stacking on top with recent ones was different from the usual blog websites.</p>
+					<table>
+						<tr>
+							<th>Reference</th>
+							<th>Implementation</th>
+						</tr>
+						<tr>
+							<td><a href="https://seths.blog/" target="_blank"><img src="../images/research5.png"></a></td>
+							<td><a href="research.html" target="_blank"><img src="../images/research55.png"></a></td>
+						</tr>
+					</table>
+					<br>
+					<h2>Similarities</h2>
+					<p>This webpage also took reference from the layout of Seth's Blog. Stacking the researches and then navigating it with a sidebar is similar to the reference.</p><br>
+					<h2>Diferences</h2>
+					<p>The difference is in the content.Adding on, the blog webpage of this website has a different layout from the reference.</p>
+				</div>
+			</main>
+			<!-- end of page content -->
+			<!-- footer bar  moved to the right since the side nav car is stuck on the left-->
+			<footer class="footer-box" style="margin-left:14%; width: 86%;">
+				<div class="footer-link-bar">
+					<div class="footer-col">
+						<h1>About Us</h1><br>
+						<p>PUXI is an online mobile shopping brand which has been operating since 2022.</p>
+						<p>Our goal is to provide authentic products to our customers easily online.</p>
+					</div>
+					<div class="footer-col">
+						<h1>Explore</h1><br>
+						<ul class="explore-list">
+							<li><a href="../index.html">PUXI</a></li>
+							<li><a href="products.html">Products</a></li>
+							<li><a href="blog.html">Blog<title></title></a></li>
+							<li><a href="research.html">Reserach</a></li>
+							<li><a href="contact.html">Contact Us</a></li>
+						</ul>
+					</div>
+					<div class="footer-col">
+						<h1>Let's Connect</h1><br>
+						<div class="links">
+						<p>
+							<a href="https://www.gmail.com/" target="_blank">
+								<span class="fa fa-envelope">&nbsp;</span>puxi@gmail.com
+							</a>
+						</p>
+						<p>
+							<a>
+								<span class="fa fa-phone">&nbsp;</span>977-9856738282
+							</a>
+						</p>
+						<p>
+							<a href="https://www.google.com/maps/place/Islington+College/@27.7085218,85.3238296,17z/data=!3m1!4b1!4m5!3m4!1s0x39eb1908434cb3c5:0x1fdf1a6d41d2512d!8m2!3d27.7085171!4d85.3260183" target="_blank">
+								<span class="fa fa-map-marker"></span>&nbsp;Islington College
+							</a>	
+						</p>
+						</div>
+						<div class="socials">
+						<p>
+							<a href="https://www.twitter.com/" target="_blank">
+								<span class="fa fa-twitter"></span>
+							</a>
+							<a href="https://www.instagram.com/" target="_blank">
+								<span class="fa fa-instagram"></span>
+							</a>
+							<a href="https://www.facebook.com/" target="_blank">
+								<span class="fa fa-facebook"></span>
+							</a>
+						</p>
+					</div>
+					</div>
+				</div>
+				<div class="footer-copy-bar">
+					<p>Copyright &copy; 2022 | All Rights Reserved</p>
+			</footer>
+		</div>
+	</body>
+</html>

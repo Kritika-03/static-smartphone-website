@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Online Mobile Store">
+		<meta name="keywords" content="Phone,Mobile,Smartphone,Store,PUXI">
+		<meta name="author" content="Kritika Baidawar,Islington">
+
+		<title>PUXI | Products</title>
+
+		<!-- external css link for icons used in website -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+		<!-- external css link for header and footer of the website  -->
+		<link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+
+		<!-- External javascript link -->
+		<script src="../js/script.js"></script>
+
+		<!-- Internal CSS for product page -->
+		<style type="text/css">
+
+			/*a wrapper div for the contents in the page*/
+			.content-box-wrapper
+			{
+				display: flex;
+				margin-top: 120px;
+				width: 100%;
+				height:1600px;
+			}
+			/*placing the side nav at the left hand side of the page*/
+			.product-nav-bar
+			{
+				position: fixed;
+				z-index: 1;
+				flex: 10%;
+				height: 100%;
+				margin: 0 2% 0 2%;
+				padding: 20px;
+				text-align: center;
+				border-right: 1px solid #ccc;
+			}
+			/*the container displaying the products*/
+			.product-bar
+			{
+				flex: 80%;
+				margin: 0 2% 0 20%;
+			}
+
+			.product-nav-bar h1
+			{
+				font-size: 35px;
+			}
+			.product-nav-bar ul
+			{
+				list-style: none;
+			}
+			/*changing the appearance of the link of the side-navigation bar on hover*/
+			.product-nav-bar a
+			{
+				display: block;
+				font-size: 24px;
+				padding: 15px;
+				color: black;
+				text-decoration: none;
+				transition: .5s;
+			}
+			.product-nav-bar a:hover
+			{
+				background: black;
+				color: white;
+			}
+			/*assigning container for brand*/
+			.product-box
+			{
+				margin-bottom: 30px;
+				width: 100%;
+				height: 500px;
+				padding: 20px;
+			}
+			.product-title
+			{
+				height: 20%;
+				width: 100%;
+				font-size: 30px;
+				text-align: center;
+			}
+			/*Container holding the row of products*/
+			.phone-display-box{
+				height: 80%;
+				width: 100%;
+				display: flex;
+				padding: 10px;
+				background: white;
+			}
+			/*Container/card holding a single product*/
+			.phone
+			{
+				flex: 30%;
+				position: relative;
+				margin-right:3.3%;
+				border: 1px solid darkred;
+			}
+			.phone-image
+			{
+				width: 100%;
+				height: 75%;
+			}
+			.phone-image img
+			{
+				height: 100%;
+				width: 100%;
+				object-fit: cover;
+			}
+			.phone-info
+			{
+				width: 100%;
+				height: 25%;
+				line-height: 40px;
+				text-align: center;
+			}
+			/*this container appears on hover,
+			It is placed on top of the phone-info div*/
+			.phone-extra
+			{
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				height: 25%;
+				width: 100%;
+				background: darkred;
+				text-align: center;
+				padding: 5%;
+				opacity: 0;
+				transition: .5s;
+			}
+			/*styling the buttons inside the phone-extra div*/
+			.likebtn,.detailsbtn,.shopbtn
+			{
+				height: 100%;
+				width: 25%;
+				font-size: 20px;
+				border-radius: 50%;
+				border: none;
+				background: transparent;
+				color:white;
+				transition: .3s;
+			}
+			/*icon from external css link*/
+			.fa-shopping-cart
+			{
+				font-size: 20px;
+			}
+			.likebtn:hover,.detailsbtn:hover,.shopbtn:hover,.fa-shopping-cart:hover{
+				width: 35%;
+				font-size: 25px;
+				cursor: pointer;
+				background: white;
+				color: darkred;
+			}
+			/*the div is visible when you hover over it*/
+			.phone-extra:hover{
+				opacity: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- Contains all the elements inside the page -->
+		<div class="wrapper">
+			<!-- Navigation-bar-container -->
+			<header class="header-box">
+				<!-- Navigation bar is divided into two parts -->
+				<div class="upper-nav-box">
+					<div class="logo">
+						<a href="../index.html"><img src="../images/logo.png"></a>
+					</div>
+					<div class="upper-nav-text">
+						<a href="#" onclick="inactiveAlert()">Login</a>
+						<a href="#" onclick="inactiveAlert()">Sign up</a>
+					</div>
+				</div>
+				<div class="lower-nav-box">
+					<ul>
+						<li><a href="../index.html">Home</a></li>
+						<li><a href="products.html">Products</a></li>
+						<li><a href="research.html">Research</a></li>
+						<li><a href="blog.html">Blog</a></li>
+						<li><a href="contact.html">Contact Us</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Navigation Bar ends 
+			The wrapper for the content of the page -->
+			<main class="content-box-wrapper">
+				<!-- Secondary nav bar for withitn the page -->
+				<div class="product-nav-bar">
+					<h1>Browse</h1><br>
+					<ul>
+						<li><a href="#iphone">iPhone</a></li>
+						<li><a href="#samsung">Samsung</a></li>
+						<li><a href="#huawei">Huawei</a></li>
+					</ul>
+				</div>
+				<!-- Container for the contents beside the side navigation bar -->
+				<div class="product-bar">
+					<!-- Container for each brand -->
+					<div class="product-box">
+						<!-- brand title -->
+						<div class="product-title">
+							<a id="iphone"><h1>iPhone</h1></a>
+						</div>
+						<!-- Container that holds the product display row -->
+						<div class="phone-display-box">
+							<!-- Product card for each phone -->
+							<div class="phone">
+								<div class="phone-image">
+									<img src="../images/iphone1.jpg">
+								</div>
+								<div class="phone-info">
+									<h2>Apple iPhone 13 Pro</h2>
+									<h3> Rs.173990.00 </h3>
+								</div>
+								<!-- invisible until you hover over it -->
+								<div class="phone-extra">
+									<button class="likebtn"><span>&#10084;</span></button>
+									<button class="detailsbtn">Details</button>
+									<button class="shopbtn"><span class="fa fa-shopping-cart"></span></button>
+								</div>
+							</div>
+							<!-- End of one product card -->
+							<div class="phone">
+								<div class="phone-image">
+									<img src="../images/iphone2.jpg">
+								</div>
+								<div class="phone-info">
+									<h2>Apple iPhone 12</h2>
+									<h3> Rs.120990.00 </h3>
+								</div>
+								<div class="phone-extra">
+									<button class="likebtn"><span>&#10084;</span></button>
+									<button class="detailsbtn">Details</button>
+									<button class="shopbtn"><span class="fa fa-shopping-cart"></span></button>
+								</div>
+							</div>
+							<div class="phone">
+								<div class="phone-image">
+									<img src="../images/iphone3.jpg">
+								</div>
+								<div class="phone-info">
+									<h2>Apple iPhone SE</h2>
+									<h3> Rs.87000.00 </h3>
+								</div>
+								<div class="phone-extra">
+									<button class="likebtn"><span>&#10084;</span></button>
+									<button class="detailsbtn">Details</button>
+									<button class="shopbtn"><span class="fa fa-shopping-cart"></span></button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- End for one brand container -->
+					<div class="product-box">
+						<div class="product-title">
+							<a id="samsung"><h1>Samsung</h1></a>
+						</div>
+						<div class="phone-display-box">
+							<div class="phone">
+								<div class="phone-image">
+									<img src="../images/samsung1.jpg">
+								</div>
+								<div class="phone-info">
+									<h2>Galaxy S22 Ultra</h2>
+									<h3> Rs.159999.00 </h3>
+								</div>
+								<div class="phone-extra">
+									<button class="likebtn"><span>&#10084;</span></button>
+									<button class="detailsbtn">Details</button>
+									<button class="shopbtn"><span class="fa fa-shopping-cart"></span></button>
+								</div>
+							</div>
+							<div class="phone">
+								<div class="phone-image">
+									<img src="../images/samsung2.jpg">
+								</div>
+								<div class="phone-info">
+									<h2>Galaxy Z Fold 2</h2>
+									<h3> Rs.209999.00 </h3>
+								</div>
+								<div class="phone-extra">
+									<button class="likebtn"><span>&#10084;</span></button>
+									<button class="detailsbtn">Details</button>
+									<button class="shopbtn"><span class="fa fa-shopping-cart"></span></button>
+								</div>
+							</div>
+							<div class="phone">
+								<div class="phone-image">
+									<img src="../images/samsung3.jpg">
+								</div>
+								<div class="phone-info">
+									<h2>Galaxy A32</h2>
+									<h3> Rs.34999.00.00 </h3>
+								</div>
+								<div class="phone-extra">
+									<button class="likebtn"><span>&#10084;</span></button>
+									<button class="detailsbtn">Details</button>
+									<button class="shopbtn"><span class="fa fa-shopping-cart"></span></button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="product-box">
+						<div class="product-title">
+							<a id="huawei"><h1>Huawei</h1></a>
+						</div>
+						<div class="phone-display-box">
+							<div class="phone">
+								<div class="phone-image">
+									<img src="../images/huawei1.jpg">
+								</div>
+								<div class="phone-info">
+									<h2>Huawei P30 Pro</h2>
+									<h3> Rs.119900.00 </h3>
+								</div>
+								<div class="phone-extra">
+									<button class="likebtn"><span>&#10084;</span></button>
+									<button class="detailsbtn">Details</button>
+									<button class="shopbtn"><span class="fa fa-shopping-cart"></span></button>
+								</div>
+							</div>
+							<div class="phone">
+								<div class="phone-image">
+									<img src="../images/huawei2.jpg">
+								</div>
+								<div class="phone-info">
+									<h2>Huawei Nova 9 Pro</h2>
+									<h3> Rs.45425.00 </h3>
+								</div>
+								<div class="phone-extra">
+									<button class="likebtn"><span>&#10084;</span></button>
+									<button class="detailsbtn">Details</button>
+									<button class="shopbtn"><span class="fa fa-shopping-cart"></span></button>
+								</div>
+							</div>
+							<div class="phone">
+								<div class="phone-image">
+									<img src="../images/huawei3.jpg">
+								</div>
+								<div class="phone-info">
+									<h2>Huawei Mate X Foldable</h2>
+									<h3> Rs.307020.00 </h3>
+								</div>
+								<div class="phone-extra">
+									<button class="likebtn"><span>&#10084;</span></button>
+									<button class="detailsbtn">Details</button>
+									<button class="shopbtn"><span class="fa fa-shopping-cart"></span></button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- end of Products display -->
+				</div>
+				<!-- End of the whole product display column -->
+			</main>
+			<!-- Page content ended
+			Container for the footer of the website -->
+			<!-- Inline style cause side nav is fixed to the screen and so the contents move to the side -->
+			<footer class="footer-box" style="margin-left: 15%; width: 85%;">
+				<!-- Wrapper for the columns in footer -->
+				<div class="footer-link-bar">
+					<!-- column container of footer -->
+					<div class="footer-col">
+						<h1>About Us</h1><br>
+						<p>PUXI is an online mobile shopping brand which has been operating since 2022.</p>
+						<p>Our goal is to provide authentic products to our customers easily online.</p>
+					</div>
+					<div class="footer-col">
+						<h1>Explore</h1><br>
+						<ul class="explore-list">
+							<li><a href="../index.html">PUXI</a></li>
+							<li><a href="products.html">Products</a></li>
+							<li><a href="blog.html">Blog</a></li>
+							<li><a href="research.html">Reserach</a></li>
+							<li><a href="contact.html">Contact Us</a></li>
+						</ul>
+					</div>
+					<div class="footer-col">
+						<h1>Let's Connect</h1><br>
+						<div class="links">
+						<p>
+							<a href="https://www.gmail.com/" target="_blank">
+								<span class="fa fa-envelope">&nbsp;</span>puxi@gmail.com
+							</a>
+						</p>
+						<p>
+							<a>
+								<span class="fa fa-phone">&nbsp;</span>977-9856738282
+							</a>
+						</p>
+						<p>
+							<a href="https://www.google.com/maps/place/Islington+College/@27.7085218,85.3238296,17z/data=!3m1!4b1!4m5!3m4!1s0x39eb1908434cb3c5:0x1fdf1a6d41d2512d!8m2!3d27.7085171!4d85.3260183" target="_blank">
+								<span class="fa fa-map-marker"></span>&nbsp;Islington College
+							</a>	
+						</p>
+						</div>
+						<div class="socials">
+						<p>
+							<a href="https://www.twitter.com/" target="_blank">
+								<span class="fa fa-twitter"></span>
+							</a>
+							<a href="https://www.instagram.com/" target="_blank">
+								<span class="fa fa-instagram"></span>
+							</a>
+							<a href="https://www.facebook.com/" target="_blank">
+								<span class="fa fa-facebook"></span>
+							</a>
+						</p>
+					</div>
+				</div>
+				</div>
+				<div class="footer-copy-bar">
+					<p>Copyright &copy; 2022 | All Rights Reserved</p>
+			</footer>
+		</div>
+	</body>
+</html>

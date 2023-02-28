@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Online Mobile Store">
+		<meta name="keywords" content="Phone,Mobile,Smartphone,Store,PUXI">
+		<meta name="author" content="Kritika Baidawar,Islington">
+
+		<title>PUXI | Contact Us</title>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+		<script src="../js/script.js"></script>
+		<!-- external css and javscript links -->
+
+		<style type="text/css">
+			/*wrapper for content in this page*/
+			.content-box-wrapper{
+				width: 70%;
+				height: 600px;
+				margin: 120px auto 40px auto;
+			}
+			.contact-title{
+				padding-top: 20px;
+				height: 15%;
+				width: 100%;
+				text-align: center;
+				font-size: 25px;
+			}
+			.contact-content{
+				height: 85%;
+				width: 100%;
+				display: flex;
+			}
+			/*dividing content area in half for form and contact links*/
+			.contact-form,.contact-extra{
+				flex: 50%;
+				border: 10px solid #eee;
+				padding: 0 10px;
+			}
+			.contact-form h2, .contact-extra h2{
+				text-align: center;
+				font-size: 30px;
+			}
+			/*arranding the form labels and output in table*/
+			table{
+				text-align: center;
+				height: 425px;
+				margin: auto;
+			}
+			.lable-box{
+				width: 40%;
+				text-align: left;
+			}
+			.input-box{
+				width: 70%;
+			}
+			label{
+				font-size: 20px;
+				width: 100%;
+				height: 30px;
+			}
+			/*defining dimentions for input areas*/
+			textarea,input{
+				border-color: darkred;
+				font-size: 15px;
+				width: 100%;
+				padding: 5px;
+				resize: none;
+				border-radius: 10px;
+			}
+			/*styling the send button*/
+			#submit{
+				width: 50%;
+				border-radius: 20px;
+				font-size: 25px;
+			}
+			#submit:hover{
+				cursor: pointer;
+				background: darkred;
+				color: white;
+			}
+			/*properties will apply when the input or text box is in use or focus*/
+			input:focus,textarea:focus{
+				background: rgba(139, 0, 0, 0.9);
+				color: white;
+			}
+			/*styling the contact links*/
+			.contact-extra a span{
+				text-align: center;
+				display: block;
+				padding: 10px;
+				font-size: 20px;
+				color: black;
+			}
+			.contact-extra a span:hover{
+				color: darkred;
+				border-radius: 20px;
+				box-shadow: 0 0 5px 2px rgba(139, 0, 0);
+			}
+		</style>
+		<script type="text/javascript">
+			// the function checks wether or not the required fields are empty or not
+			function validateForm(){
+				var name= document.forms["contactForm"]["name"].value;
+				var email=document.forms["contactForm"]["email"].value;
+				var message=document.forms["contactForm"]["message"].value;
+
+				if (name == "" || email == "" || message == "")
+				{
+					// if the value is empty it send out an alert to fill the fields
+					alert('Please fill the required fields.'); 
+				}
+				else
+				{
+					// if empty fields are not found it will accept the form
+					document.getElementById('submit').value="Submitted";
+					alert('Form has been submitted.Thank you.');
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<!-- whole content wrapper -->
+		<div class="wrapper">
+			<!-- Navigation bar -->
+			<header class="header-box">
+				<div class="upper-nav-box">
+					<div class="logo">
+						<a href="../index.html"><img src="../images/logo.png"></a>
+					</div>
+					<div class="upper-nav-text">
+						<a href="#" onclick="inactiveAlert()">Login</a>
+						<a href="#" onclick="inactiveAlert()">Sign up</a>
+					</div>
+				</div>
+				<div class="lower-nav-box">
+					<ul>
+						<li><a href="../index.html">Home</a></li>
+						<li><a href="products.html">Products</a></li>
+						<li><a href="research.html">Research</a></li>
+						<li><a href="blog.html">Blog</a></li>
+						<li><a href="contact.html">Contact Us</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- navigation bar ends -->
+			<!-- page content wrapper -->
+			<main class="content-box-wrapper">
+				<div class="contact-title">
+					<h1>Reach Out To Us</h1>
+				</div>
+				<div class="contact-content">
+					<!-- divinding this div in halve -->
+					<div class="contact-form" style="background: #eee;">
+						<h2>Contact Us</h2><br>
+						<!-- validation function is called when the send button is pressed -->
+						<form name="contactForm" onsubmit="validateForm()">
+							<!-- arranging the labels and inputs in table to align them -->
+							<table>
+								<tr>
+									<td class="lable-box"><label>* Full Name:</label></td>
+									<td class="input-box"><input type="text" name="name" placeholder="FirstName LastName" pattern="[A-Za-z\s]+" required></td>
+									<!-- marking the field as required and specifying only alphabets and spaces are allowed -->
+								</tr>
+								<tr>
+									<td class="lable-box"><label>* E-mail:</label></td>
+									<td class="input-box"><input type="E-mail" name="email" placeholder="username@email.com" required></span></td>
+								</tr>
+								<tr>
+									<td class="lable-box"><label>Phone Number:</label></td>
+									<td class="input-box"><input type="text" name="phone" placeholder="xxx-xxxxxxxxxx" pattern="[0-9]{3}-[0-9]{10}"></td>
+									<!-- specifying that there should be 3 numbers then a - and then 10 more numbers
+									example 977-9846342345 -->
+								</tr>
+								<tr>
+									<td class="lable-box"><label>* Your Message: </label></td>
+								</tr>
+								<tr>
+									<td colspan="2"><textarea name="message" rows="10" cols="60" placeholder="Enter your message here..." ></textarea></td>
+								</tr>
+								<tr>
+									<td colspan="2"><input type="submit" value="Send" id="submit"></td>
+							</table>
+						</form>
+					</div>
+					<!-- the form half of the content ends -->
+					<!-- the link half of the content begins -->
+					<div class="contact-extra">
+						<h2>Link With Us</h2><br>
+						<a href="https://www.gmail.com/" target="_blank">
+							<span class="fa fa-envelope">&nbsp;puxi@gmail.com</span>
+						</a>
+						<a>
+							<span class="fa fa-phone">&nbsp;977-9856738282</span>
+						</a>
+						<a href="https://www.google.com/maps/place/Islington+College/@27.7085218,85.3238296,17z/data=!3m1!4b1!4m5!3m4!1s0x39eb1908434cb3c5:0x1fdf1a6d41d2512d!8m2!3d27.7085171!4d85.3260183" target="_blank">
+							<span class="fa fa-map-marker">&nbsp;Islington College</span>
+						</a>
+						<br>
+						<hr>
+						<br>
+						<a href="https://www.facebook.com/" target="_blank">
+							<span class="fa fa-facebook"></span>
+						</a>
+
+						<a href="https://www.youtube.com/" target="_blank">
+							<span class="fa fa-youtube"></span>
+						</a>
+
+						<a href="https://www.twitter.com/" target="_blank">
+							<span class="fa fa-twitter"></span>
+						</a>
+
+						<a href="https://www.instagram.com/" target="_blank">
+							<span class="fa fa-instagram"></span>
+						</a>
+					</div>
+				</div>
+			</main>
+			<!-- page content ends -->
+			<!-- footer bar -->
+			<footer class="footer-box">
+				<div class="footer-link-bar">
+					<div class="footer-col">
+						<h1>About Us</h1><br>
+						<p>PUXI is an online mobile shopping brand which has been operating since 2022.</p>
+						<p>Our goal is to provide authentic products to our customers easily online.</p>
+					</div>
+					<div class="footer-col">
+						<h1>Explore</h1><br>
+						<ul class="explore-list">
+							<li><a href="../index.html">PUXI</a></li>
+							<li><a href="products.html">Products</a></li>
+							<li><a href="blog.html">Blog<title></title></a></li>
+							<li><a href="research.html">Reserach</a></li>
+							<li><a href="contact.html">Contact Us</a></li>
+						</ul>
+					</div>
+					<div class="footer-col">
+						<h1>Let's Connect</h1><br>
+						<div class="links">
+						<p>
+							<a href="https://www.gmail.com/" target="_blank">
+								<span class="fa fa-envelope">&nbsp;</span>puxi@gmail.com
+							</a>
+						</p>
+						<p>
+							<a>
+								<span class="fa fa-phone">&nbsp;</span>977-9856738282
+							</a>
+						</p>
+						<p>
+							<a href="https://www.google.com/maps/place/Islington+College/@27.7085218,85.3238296,17z/data=!3m1!4b1!4m5!3m4!1s0x39eb1908434cb3c5:0x1fdf1a6d41d2512d!8m2!3d27.7085171!4d85.3260183" target="_blank">
+								<span class="fa fa-map-marker"></span>&nbsp;Islington College
+							</a>	
+						</p>
+						</div>
+						<div class="socials">
+						<p>
+							<a href="https://www.twitter.com/" target="_blank">
+								<span class="fa fa-twitter"></span>
+							</a>
+							<a href="https://www.instagram.com/" target="_blank">
+								<span class="fa fa-instagram"></span>
+							</a>
+							<a href="https://www.facebook.com/" target="_blank">
+								<span class="fa fa-facebook"></span>
+							</a>
+						</p>
+					</div>
+					</div>
+				</div>
+				<div class="footer-copy-bar">
+					<p>Copyright &copy; 2022 | All Rights Reserved</p>
+			</footer>
+		</div>
+	</body>
+</html>
